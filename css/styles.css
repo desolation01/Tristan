@@ -76,10 +76,18 @@ ol {
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
-  background: color-mix(in srgb, var(--color-background) 85%, transparent);
   border-bottom: 1px solid transparent;
-  backdrop-filter: blur(20px);
   transition: border-color var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: color-mix(in srgb, var(--color-background) 85%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .site-header.scrolled {
@@ -369,6 +377,15 @@ a:focus-visible {
   gap: var(--space-24);
 }
 
+.hero-grid > *,
+.grid > *,
+.project-layout > *,
+.experience-layout > *,
+.skills-grid > *,
+.contact-grid > * {
+  min-width: 0;
+}
+
 .hero-grid {
   align-items: start;
   gap: var(--space-48);
@@ -592,6 +609,7 @@ a:focus-visible {
   justify-content: space-between;
   align-items: center;
   gap: var(--space-16);
+  min-width: 0;
   padding: var(--space-12, 12px) var(--space-16);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -607,6 +625,7 @@ a:focus-visible {
 }
 
 .link-k {
+  flex-shrink: 0;
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   letter-spacing: 0.08em;
@@ -615,6 +634,9 @@ a:focus-visible {
 }
 
 .link-v {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
   font-weight: 600;
   font-size: var(--text-sm);
   color: var(--color-background-foreground);
@@ -949,16 +971,22 @@ textarea.field-input {
 
 /* ── Responsive ── */
 @media (min-width: 40rem) {
-  .hero-meta {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .project-layout {
     grid-template-columns: 1fr 1fr;
   }
 
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 48rem) {
+  .hero-meta {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -989,6 +1017,10 @@ textarea.field-input {
     grid-template-columns: 1.15fr 1fr 1fr;
   }
 
+  .project-grid > :only-child {
+    grid-column: 1 / -1;
+  }
+
   .experience-layout {
     grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
   }
@@ -1003,6 +1035,18 @@ textarea.field-input {
 }
 
 @media (max-width: 63.99rem) {
+  .brand,
+  .header-actions {
+    position: relative;
+    z-index: var(--z-overlay);
+  }
+
+  .header-links,
+  .nav-toggle,
+  .theme-toggle {
+    display: none;
+  }
+
   .site-nav.is-open {
     display: flex;
     position: fixed;
@@ -1057,6 +1101,76 @@ textarea.field-input {
 
   .container {
     width: min(var(--container-max), calc(100% - var(--space-32)));
+  }
+}
+
+/* ── Small phones (< 40rem) ── */
+@media (max-width: 39.99rem) {
+  .header-inner {
+    gap: var(--space-8);
+  }
+
+  .header-actions {
+    gap: var(--space-4);
+  }
+
+  .theme-toggle,
+  .nav-toggle,
+  .icon-link {
+    width: var(--space-40);
+    height: var(--space-40);
+  }
+
+  .brand-mark {
+    width: var(--space-40);
+    height: var(--space-40);
+  }
+
+  .hero {
+    padding: var(--space-48) 0 var(--space-32);
+  }
+
+  .hero-grid {
+    gap: var(--space-32);
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 10vw, var(--text-4xl));
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-base);
+  }
+
+  .hero-card,
+  .card,
+  .timeline-body {
+    padding: var(--space-24);
+  }
+
+  .section {
+    padding: var(--space-64) 0;
+  }
+
+  .section-head {
+    margin-bottom: var(--space-32);
+  }
+
+  .marquee-group {
+    gap: var(--space-24);
+    padding-right: var(--space-24);
+  }
+
+  .timeline {
+    padding-left: var(--space-24);
+  }
+
+  .timeline-dot {
+    left: calc(var(--space-24) * -1 + var(--space-16) - 5px);
+  }
+
+  .contact-section {
+    padding-bottom: var(--space-64);
   }
 }
 
@@ -1356,6 +1470,13 @@ html.lenis body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.timeline-title .honor {
+  font-size: 0.90em;
+  font-weight: 400;
+  opacity: 0.8;
+  vertical-align: middle;
 }
 
 @media (prefers-reduced-motion: reduce) {
