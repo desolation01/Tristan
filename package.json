@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-web",
+  "version": "1.0.0",
+  "description": "Portfolio website",
+  "main": "index.html",
+  "scripts": {
+    "start": "node dev-server.js",
+    "vercel": "vercel dev",
+    "deploy": "vercel deploy"
+  }
+}

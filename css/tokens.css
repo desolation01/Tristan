@@ -1,0 +1,133 @@
+/* ==========================================================================
+   DESIGN TOKENS — Tristan Namingit · Portfolio
+   Direction: Dark-first (2026), one bold accent, minimal palette elsewhere.
+   Palette: Near-black ink (#0B0C0E), white text (#EDEDF1), blue (#4F8BFF)
+   Fonts: Inter (display + body) + JetBrains Mono (labels)
+   ========================================================================== */
+
+:root {
+  /* ── Colors (dark default) ── */
+  --color-primary: #F2F2F5;
+  --color-primary-foreground: #0B0C0E;
+  --color-secondary: #A0A3AB;
+  --color-secondary-foreground: #0B0C0E;
+  --color-accent: #4F8BFF;
+  --color-accent-foreground: #0B0C0E;
+  --color-background: #0B0C0E;
+  --color-background-foreground: #EDEDF1;
+  --color-surface: #131417;
+  --color-surface-foreground: #EDEDF1;
+  --color-surface-strong: #1C1E23;
+  --color-muted: #1C1E23;
+  --color-muted-foreground: #9A9DA6;
+  --color-border: #26282E;
+  --color-border-strong: #3A3D45;
+  --color-destructive: #F87171;
+  --color-destructive-foreground: #0B0C0E;
+  --color-success: #4ADE80;
+  --color-success-foreground: #0B0C0E;
+  --color-warning: #FBBF24;
+  --color-warning-foreground: #0B0C0E;
+  --color-grid: transparent;
+  --color-glow: transparent;
+  --color-glow-secondary: transparent;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.35), 0 8px 20px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.35), 0 16px 32px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.4), 0 24px 56px rgba(0, 0, 0, 0.45);
+  --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  /* ── Spacing ── */
+  --space-4: 0.25rem;
+  --space-8: 0.5rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
+  --space-96: 6rem;
+
+  /* ── Radius ── */
+  --radius-none: 0;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 999px;
+
+  /* ── Typography ── */
+  --font-display: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4.5rem;
+
+  /* ── Z-Index ── */
+  --z-base: 1;
+  --z-dropdown: 50;
+  --z-sticky: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-popover: 350;
+  --z-toast: 400;
+  --z-tooltip: 450;
+
+  /* ── Transitions ── */
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-standard: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-emphasis: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  /* ── Breakpoints ── */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
+  --container-max: 72rem;
+}
+
+/* ── Light (toggle override) ── */
+[data-theme="light"] {
+  --color-primary: #101014;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #3F3F46;
+  --color-secondary-foreground: #FFFFFF;
+  --color-accent: #2F6FED;
+  --color-accent-foreground: #FFFFFF;
+  --color-background: #FFFFFF;
+  --color-background-foreground: #101014;
+  --color-surface: #FFFFFF;
+  --color-surface-foreground: #101014;
+  --color-surface-strong: #F4F4F5;
+  --color-muted: #F4F4F5;
+  --color-muted-foreground: #63636B;
+  --color-border: #E7E7EA;
+  --color-border-strong: #C9C9D1;
+  --color-destructive: #DC2626;
+  --color-destructive-foreground: #FFFFFF;
+  --color-success: #16A34A;
+  --color-success-foreground: #FFFFFF;
+  --color-warning: #B45309;
+  --color-warning-foreground: #FFFFFF;
+  --shadow-sm: 0 1px 2px rgba(16, 16, 20, 0.05);
+  --shadow-md: 0 2px 4px rgba(16, 16, 20, 0.05), 0 8px 20px rgba(16, 16, 20, 0.06);
+  --shadow-lg: 0 4px 8px rgba(16, 16, 20, 0.06), 0 16px 32px rgba(16, 16, 20, 0.08);
+  --shadow-xl: 0 8px 16px rgba(16, 16, 20, 0.07), 0 24px 56px rgba(16, 16, 20, 0.11);
+  --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
