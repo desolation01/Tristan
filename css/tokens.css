@@ -1,44 +1,40 @@
 /* ==========================================================================
    DESIGN TOKENS — Tristan Namingit · Portfolio
-   Direction: Dark-first (2026), one bold accent, minimal palette elsewhere.
-   Palette: Near-black ink (#0B0C0E), white text (#EDEDF1), blue (#4F8BFF)
-   Fonts: Inter (display + body) + JetBrains Mono (labels)
+   Direction: warm editorial / product-minded developer portfolio.
    ========================================================================== */
 
 :root {
-  /* ── Colors (dark default) ── */
-  --color-primary: #F2F2F5;
-  --color-primary-foreground: #0B0C0E;
-  --color-secondary: #A0A3AB;
-  --color-secondary-foreground: #0B0C0E;
-  --color-accent: #4F8BFF;
-  --color-accent-foreground: #0B0C0E;
-  --color-background: #0B0C0E;
-  --color-background-foreground: #EDEDF1;
-  --color-surface: #131417;
-  --color-surface-foreground: #EDEDF1;
-  --color-surface-strong: #1C1E23;
-  --color-muted: #1C1E23;
-  --color-muted-foreground: #9A9DA6;
-  --color-border: #26282E;
-  --color-border-strong: #3A3D45;
-  --color-destructive: #F87171;
-  --color-destructive-foreground: #0B0C0E;
-  --color-success: #4ADE80;
-  --color-success-foreground: #0B0C0E;
-  --color-warning: #FBBF24;
-  --color-warning-foreground: #0B0C0E;
-  --color-grid: transparent;
-  --color-glow: transparent;
-  --color-glow-secondary: transparent;
+  --color-primary: #18212B;
+  --color-primary-foreground: #F6F7F2;
+  --color-secondary: #5E6872;
+  --color-secondary-foreground: #F6F7F2;
+  --color-accent: #E66A3D;
+  --color-accent-foreground: #F6F7F2;
+  --color-background: #F6F7F2;
+  --color-background-foreground: #18212B;
+  --color-surface: #FFFFFF;
+  --color-surface-foreground: #18212B;
+  --color-surface-strong: #E9EEEA;
+  --color-muted: #E9EEEA;
+  --color-muted-foreground: #5E6872;
+  --color-border: #D7DFDB;
+  --color-border-strong: #AEBBB4;
+  --color-destructive: #B84436;
+  --color-destructive-foreground: #F6F7F2;
+  --color-success: #3F7D58;
+  --color-success-foreground: #F6F7F2;
+  --color-warning: #A66A28;
+  --color-warning-foreground: #F6F7F2;
+  --color-grid: rgba(24, 33, 43, 0.055);
+  --color-glow: rgba(230, 106, 61, 0.12);
+  --color-glow-secondary: rgba(24, 33, 43, 0.06);
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.35), 0 8px 20px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.35), 0 16px 32px rgba(0, 0, 0, 0.4);
-  --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.4), 0 24px 56px rgba(0, 0, 0, 0.45);
-  --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --shadow-sm: 0 1px 2px rgba(24, 33, 43, 0.05);
+  --shadow-md: 0 8px 24px rgba(24, 33, 43, 0.08);
+  --shadow-lg: 0 18px 44px rgba(24, 33, 43, 0.11);
+  --shadow-xl: 0 26px 70px rgba(24, 33, 43, 0.15);
+  --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 
-  /* ── Spacing ── */
   --space-4: 0.25rem;
   --space-8: 0.5rem;
   --space-16: 1rem;
@@ -49,15 +45,13 @@
   --space-64: 4rem;
   --space-96: 6rem;
 
-  /* ── Radius ── */
   --radius-none: 0;
   --radius-sm: 6px;
   --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 20px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
   --radius-full: 999px;
 
-  /* ── Typography ── */
   --font-display: "Inter", "Segoe UI", system-ui, sans-serif;
   --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -73,7 +67,6 @@
   --text-5xl: 3.5rem;
   --text-6xl: 4.5rem;
 
-  /* ── Z-Index ── */
   --z-base: 1;
   --z-dropdown: 50;
   --z-sticky: 100;
@@ -83,7 +76,6 @@
   --z-toast: 400;
   --z-tooltip: 450;
 
-  /* ── Transitions ── */
   --duration-fast: 150ms;
   --duration-normal: 200ms;
   --duration-slow: 300ms;
@@ -93,42 +85,47 @@
   --ease-emphasis: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-exit: cubic-bezier(0.4, 0, 1, 1);
 
-  /* ── Breakpoints ── */
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 96rem;
-
-  --container-max: 72rem;
+  --container-max: 76rem;
 }
 
-/* ── Light (toggle override) ── */
+[data-theme="dark"] {
+  --color-primary: #F6F7F2;
+  --color-primary-foreground: #18212B;
+  --color-secondary: #AEBBB4;
+  --color-secondary-foreground: #18212B;
+  --color-accent: #F08A5F;
+  --color-accent-foreground: #18212B;
+  --color-background: #18212B;
+  --color-background-foreground: #F6F7F2;
+  --color-surface: #222D38;
+  --color-surface-foreground: #F6F7F2;
+  --color-surface-strong: #2C3945;
+  --color-muted: #2C3945;
+  --color-muted-foreground: #AEBBB4;
+  --color-border: #3B4A56;
+  --color-border-strong: #657582;
+  --color-grid: rgba(246, 247, 242, 0.06);
+  --color-glow: rgba(240, 138, 95, 0.14);
+  --color-glow-secondary: rgba(246, 247, 242, 0.05);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.24);
+  --shadow-xl: 0 26px 70px rgba(0, 0, 0, 0.3);
+}
+
 [data-theme="light"] {
-  --color-primary: #101014;
-  --color-primary-foreground: #FFFFFF;
-  --color-secondary: #3F3F46;
-  --color-secondary-foreground: #FFFFFF;
-  --color-accent: #2F6FED;
-  --color-accent-foreground: #FFFFFF;
-  --color-background: #FFFFFF;
-  --color-background-foreground: #101014;
-  --color-surface: #FFFFFF;
-  --color-surface-foreground: #101014;
-  --color-surface-strong: #F4F4F5;
-  --color-muted: #F4F4F5;
-  --color-muted-foreground: #63636B;
-  --color-border: #E7E7EA;
-  --color-border-strong: #C9C9D1;
-  --color-destructive: #DC2626;
-  --color-destructive-foreground: #FFFFFF;
-  --color-success: #16A34A;
-  --color-success-foreground: #FFFFFF;
-  --color-warning: #B45309;
-  --color-warning-foreground: #FFFFFF;
-  --shadow-sm: 0 1px 2px rgba(16, 16, 20, 0.05);
-  --shadow-md: 0 2px 4px rgba(16, 16, 20, 0.05), 0 8px 20px rgba(16, 16, 20, 0.06);
-  --shadow-lg: 0 4px 8px rgba(16, 16, 20, 0.06), 0 16px 32px rgba(16, 16, 20, 0.08);
-  --shadow-xl: 0 8px 16px rgba(16, 16, 20, 0.07), 0 24px 56px rgba(16, 16, 20, 0.11);
-  --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --color-background: #F6F7F2;
 }
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+  color-scheme: light;
+}
+
+[data-theme="dark"] { color-scheme: dark; }
